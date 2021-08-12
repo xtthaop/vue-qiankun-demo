@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "app-microapp-web": {
+      "appName": "微应用",
+      "routes": [
+        {
+          "path": "/app/microapp/web/test1",
+          "name": "Test1",
+          "components": "/test1",
+          "hidden": false,
+          "meta": {
+            "title": "测试页面1",
+            "icon": ""
+          }
+        },
+        {
+          "path": "/app/microapp/web/test2",
+          "name": "Test2",
+          "components": "/test2",
+          "hidden": false,
+          "meta": {
+            "title": "测试页面2",
+            "icon": ""
+          }
+        }
+      ]
+    }
+  }
+}

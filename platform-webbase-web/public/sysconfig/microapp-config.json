@@ -1,0 +1,12 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": [
+    {
+      "name": "app-microapp-web", 
+      "entry": "/child/app/microapp/web/", 
+      "container": "#micro-app", 
+      "activeRule": "/app/microapp/web"
+    }
+  ]
+}

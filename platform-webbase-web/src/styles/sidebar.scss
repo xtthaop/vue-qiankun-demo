@@ -1,0 +1,116 @@
+#mainapp {
+
+  .mainapp-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .mainapp-app-container {
+    position: relative;
+    min-height: 100%;
+    margin-left: $sideBarWidth;
+    transition: margin-left .28s;
+  }
+
+  .mainweb-collapse-btn-container {
+    left: $sideBarWidth;
+  }
+
+  .mainweb-sidebar-container {
+    transition: width 0.28s;
+    width: $sideBarWidth !important;
+    background-color: $menuBg;
+    height: calc(100% - 50px);
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+
+    .mainweb-sidebar-title {
+      width: 100%;
+      height: $titleHeight;
+      line-height: $titleHeight;
+      font-size: $titleFontSize;
+      padding: 0 20px;
+      box-sizing: border-box;
+      background-color: $titleBg;
+      border-bottom: 1px solid $titleDivide;
+    }
+
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+
+    .submenu-title-nodropdown,
+    .el-submenu__title {
+      height: $menuHeight !important;
+      line-height: $menuHeight !important;
+      font-size: $menuFontSize !important;
+
+      &:hover {
+        background-color: $menuHover !important;
+      }
+    }
+
+    & .nest-menu .el-submenu > .el-submenu__title,
+    & .el-submenu .el-menu-item {
+      min-width: $sideBarWidth !important;
+      background-color: $subMenuBg !important;
+
+      height: $subMenuHeight !important;
+      line-height: $subMenuHeight !important;
+      font-size: $subMenuFontSize !important;
+
+      &:hover {
+        background-color: $subMenuHover !important;
+      }
+    }
+
+    .is-active > .el-submenu__title {
+      color: $subMenuActiveText !important;
+    }
+  
+    .scrollbar-wrapper {
+      overflow-x: hidden !important;
+    }
+  
+    .el-scrollbar__bar.is-vertical {
+      right: 0px;
+    }
+  
+    .el-scrollbar {
+      height: calc(100% - 50px);
+    }
+
+    .is-horizontal {
+      display: none;
+    }
+
+    a{
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      text-decoration: none;
+    }
+  }
+
+  .noMenus {
+    .mainapp-app-container {
+      margin-left: 0;
+    }
+  }
+
+  .hideSidebar {
+    .mainapp-app-container {
+      margin-left: 0;
+    }
+
+    .mainapp-collapse-btn-container {
+      left: 0;
+    }
+  }
+}

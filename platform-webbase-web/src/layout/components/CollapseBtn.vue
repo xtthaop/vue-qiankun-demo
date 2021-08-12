@@ -1,0 +1,83 @@
+<template>
+  <div class="platform-webbase-web-menu-collapse">
+    <div class="menu-collapse-inner" @click="handleToggle">
+      <div class="menu-collapse-bg"></div>
+      <div class="menu-collapse">
+        <i class="el-icon-arrow-left" v-if="sidebarOpenState"></i>
+        <i class="el-icon-arrow-right" v-else></i>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  name: 'CollapseBtn',
+  computed: {
+    ...mapGetters([
+      'sidebarOpenState',
+    ]),
+  },
+  methods: {
+    handleToggle(){
+      this.$store.dispatch('app/toggleMenu')
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.platform-webbase-web-menu-collapse{
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 66px;
+  box-sizing: border-box;
+  z-index: 3;
+
+  .menu-collapse-inner{
+    position: relative;
+    top: -50%;
+    left: 0;
+    width: 12px;
+    height: 66px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .menu-collapse-bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 66px;
+      border-bottom: 8px solid transparent;
+      border-right: none;
+      border-left: 12px solid #EBEBEB;
+      border-top: 8px solid transparent;
+      box-sizing: border-box;
+      transition: all 0.12s ease;
+      -webkit-transition: all 0.12s ease;
+    }
+
+    .menu-collapse{
+      position: relative;
+      left: 0;
+      right: auto;
+      height: 66px;
+      cursor: pointer;
+
+      i{
+        position: absolute;
+        top: 25px;
+        left: -1px;
+        color: #546478;
+        font-weight: 500;
+        transition: all 0.12s ease;
+        -webkit-transition: all 0.12s ease;
+      }
+    }
+  }
+}
+</style>
