@@ -1,12 +1,12 @@
 <template>
-  <div class="mainweb-navbar">
-    <div class="mainweb-navbar-left">
-      <div class="mainweb-title" @click="$router.push({ name: 'Home' })">
+  <div class="mainapp-navbar">
+    <div class="mainapp-navbar-left">
+      <div class="mainapp-title" @click="$router.push({ name: 'Home' })">
         vue-qiankun-demo
       </div>
-      <div class="mainweb-navigation">
-        <span class="mainweb-navigation-item" @click="$store.dispatch('app/openMenu')">
-          <AppLink to="/app/microapp/web/test1">微应用</AppLink>
+      <div class="mainapp-navigation">
+        <span class="mainapp-navigation-item" @click="$store.dispatch('app/openMenu')">
+          <AppLink to="/app/microapp/web/test1" class="link-type">微应用</AppLink>
         </span>
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
 <style scoped lang="scss">
 @import "~@/styles/variables.scss";
 
-.mainweb-navbar {
+.mainapp-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,32 +38,34 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
   z-index: 1002;
 
-  .mainweb-navbar-left {
+  .mainapp-navbar-left {
     display: flex;
     align-items: center;
 
-    .mainweb-title {
-      padding: 0 20px;
-      font-size: 22px;
+    .mainapp-title {
+      width: $sideBarWidth;
+      text-align: center;
+      font-size: 18px;
       font-weight: 600;
-      white-space: nowrap;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
       cursor: pointer;
     }
 
-    .mainweb-navigation {
+    .mainapp-navigation {
       padding: 0 20px;
+      margin-left: 30px;
 
-      .mainweb-navigation-item {
+      .mainapp-navigation-item {
         font-size: 16px;
         font-weight: 300;
         cursor: pointer;
 
-        &:hover {
-          color: #409EFF;
+        .link-type {
+          color: #333;
+          text-decoration: none;
+
+          &:hover {
+            color: #409EFF;
+          }
         }
       }
     }

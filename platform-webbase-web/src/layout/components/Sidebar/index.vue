@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mainweb-sidebar-title">{{ appName }}</div>
+    <div class="mainapp-sidebar-title">{{ appName }}</div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"

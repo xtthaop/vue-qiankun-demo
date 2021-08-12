@@ -1,8 +1,12 @@
 <template>
-  <div class="mainapp-wrapper">
+  <div :class="classObj" class="mainapp-wrapper">
     <Navbar></Navbar>
-    <Sidebar class="mainweb-sidebar-container" v-show="appRoutes.length && sidebarOpenState"></Sidebar>
-    <div class="mainweb-app-container">
+    <CollapseBtn class="mainapp-collapse-btn-container" v-show="appRoutes.length"></CollapseBtn>
+    <Sidebar 
+      class="mainapp-sidebar-container"
+      :style="{ width: (appRoutes.length && sidebarOpenState) ? variables.sidebarWidth : 0 }"
+    ></Sidebar>
+    <div class="mainapp-app-container">
       <AppMain></AppMain>
     </div>
   </div>
@@ -10,7 +14,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Navbar, AppMain, Sidebar } from './components'
+import { Navbar, AppMain, Sidebar, CollapseBtn } from './components'
+import variables from '@/styles/variables.scss'
 
 export default {
   name: 'Layout',
@@ -18,12 +23,23 @@ export default {
     Navbar,
     AppMain,
     Sidebar,
+    CollapseBtn,
   },
   computed: {
     ...mapGetters([
       'appRoutes',
       'sidebarOpenState',
     ]),
+    classObj() {
+      return {
+        noRoutes: !this.appRoutes.length,
+        hideSidebar: !this.sidebarOpenState,
+        openSidebar: this.sidebarOpenState,
+      }
+    },
+    variables() {
+      return variables
+    },
   },
 }
 </script>

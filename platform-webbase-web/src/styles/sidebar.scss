@@ -12,13 +12,13 @@
     transition: margin-left .28s;
   }
 
-  .mainweb-collapse-btn-container {
+  .mainapp-collapse-btn-container {
     left: $sideBarWidth;
+    transition: left .28s;
   }
 
-  .mainweb-sidebar-container {
-    transition: width 0.28s;
-    width: $sideBarWidth !important;
+  .mainapp-sidebar-container {
+    width: $sideBarWidth;
     background-color: $menuBg;
     height: calc(100% - 50px);
     position: fixed;
@@ -27,8 +27,9 @@
     left: 0;
     z-index: 1001;
     overflow: hidden;
+    transition: width .28s;
 
-    .mainweb-sidebar-title {
+    .mainapp-sidebar-title {
       width: 100%;
       height: $titleHeight;
       line-height: $titleHeight;
@@ -98,7 +99,7 @@
     }
   }
 
-  .noMenus {
+  .noRoutes {
     .mainapp-app-container {
       margin-left: 0;
     }

@@ -1,5 +1,5 @@
 <template>
-  <section class="mainweb-app-main">
+  <section class="mainapp-app-main">
     <router-view></router-view>
   </section>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.mainweb-app-main {
+.mainapp-app-main {
   min-height: calc(100vh - 50px);
   width: 100%;
   padding-top: 50px;

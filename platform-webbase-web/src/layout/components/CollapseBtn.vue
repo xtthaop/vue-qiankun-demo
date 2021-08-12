@@ -1,8 +1,8 @@
 <template>
-  <div class="platform-webbase-web-menu-collapse">
-    <div class="menu-collapse-inner" @click="handleToggle">
-      <div class="menu-collapse-bg"></div>
-      <div class="menu-collapse">
+  <div class="mainapp-collapse-container">
+    <div class="mainapp-menu-collapse-inner" @click="handleToggle">
+      <div class="mainapp-menu-collapse-bg"></div>
+      <div class="mainapp-menu-collapse">
         <i class="el-icon-arrow-left" v-if="sidebarOpenState"></i>
         <i class="el-icon-arrow-right" v-else></i>
       </div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.platform-webbase-web-menu-collapse{
+.mainapp-collapse-container{
   position: absolute;
   top: 50%;
   width: 12px;
@@ -37,7 +37,7 @@ export default {
   box-sizing: border-box;
   z-index: 3;
 
-  .menu-collapse-inner{
+  .mainapp-menu-collapse-inner{
     position: relative;
     top: -50%;
     left: 0;
@@ -46,7 +46,7 @@ export default {
     box-sizing: border-box;
     overflow: hidden;
 
-    .menu-collapse-bg{
+    .mainapp-menu-collapse-bg{
       position: absolute;
       top: 0;
       left: 0;
@@ -61,7 +61,7 @@ export default {
       -webkit-transition: all 0.12s ease;
     }
 
-    .menu-collapse{
+    .mainapp-menu-collapse{
       position: relative;
       left: 0;
       right: auto;
