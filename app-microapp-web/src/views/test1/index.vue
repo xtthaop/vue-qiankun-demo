@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <p>应用间通信</p>
     <el-form :inline="true">
       <el-form-item>
         <el-input v-model="msg" style="width:360px"></el-input>
