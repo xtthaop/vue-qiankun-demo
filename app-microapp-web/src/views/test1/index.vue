@@ -12,16 +12,18 @@
 </template>
 
 <script>
+import actions from "@/shared/actions"
+
 export default {
   name: 'Test2',
   data() {
     return {
-      msg: ''
+      msg: '测试消息'
     }
   },
   methods: {
     sendMsg() {
-      console.log(this.msg)
+      actions.setGlobalState({ newMsg: this.msg })
     }
   }
 }
