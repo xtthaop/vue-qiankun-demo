@@ -8,7 +8,7 @@
         {
           "path": "/app/microapp/web/test1",
           "name": "Test1",
-          "components": "/test1",
+          "component": "/test1",
           "hidden": false,
           "meta": {
             "title": "测试页面1",
@@ -18,7 +18,7 @@
         {
           "path": "/app/microapp/web/test2",
           "name": "Test2",
-          "components": "/test2",
+          "component": "/test2",
           "hidden": false,
           "meta": {
             "title": "测试页面2",

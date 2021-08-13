@@ -2,10 +2,7 @@
   <div :class="classObj" class="mainapp-wrapper">
     <Navbar></Navbar>
     <CollapseBtn class="mainapp-collapse-btn-container" v-show="appRoutes.length"></CollapseBtn>
-    <Sidebar 
-      class="mainapp-sidebar-container"
-      :style="{ width: (appRoutes.length && sidebarOpenState) ? variables.sidebarWidth : 0 }"
-    ></Sidebar>
+    <Sidebar class="mainapp-sidebar-container" v-show="appRoutes.length && sidebarOpenState"></Sidebar>
     <div class="mainapp-app-container">
       <AppMain></AppMain>
     </div>

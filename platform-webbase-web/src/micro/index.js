@@ -7,9 +7,10 @@ import {
 import { getMicroappConfig } from '@/api/permission'
 import store from '@/store'
 
-function getRoutes(){
-  const { routes } = store.getters
-  return routes
+function getRoutes(appKey){
+  if (!appKey) return []
+  const { allAppInfo } = store.getters
+  return allAppInfo[appKey] && allAppInfo[appKey].routes
 }
 
 (async function(){

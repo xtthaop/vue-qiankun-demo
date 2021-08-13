@@ -9,12 +9,10 @@
     position: relative;
     min-height: 100%;
     margin-left: $sideBarWidth;
-    transition: margin-left .28s;
   }
 
   .mainapp-collapse-btn-container {
     left: $sideBarWidth;
-    transition: left .28s;
   }
 
   .mainapp-sidebar-container {
