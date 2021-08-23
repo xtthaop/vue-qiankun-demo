@@ -4,7 +4,7 @@ const publicPath = '/child/app/microapp/web'
 module.exports = {
   publicPath,
   devServer: {
-    port: 5065,
+    port: 5066,
     disableHostCheck: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
