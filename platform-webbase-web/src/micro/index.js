@@ -6,6 +6,7 @@ import {
 } from 'qiankun'
 import { getMicroappConfig } from '@/api/permission'
 import store from '@/store'
+import NProgress from 'nprogress'
 
 function getRoutes(appKey){
   if (!appKey) return []
@@ -26,9 +27,11 @@ function getRoutes(appKey){
 
   registerMicroApps(microapps, {
     beforeLoad: () => {
+      NProgress.start()
       return Promise.resolve()
     },
     afterMount: () => {
+      NProgress.done()
       return Promise.resolve()
     }
   })
@@ -38,6 +41,7 @@ function getRoutes(appKey){
     if(msg && msg.includes("died in status LOADING_SOURCE_CODE")){
       Message.error("请检查应用是否正常运行")
     }
+    NProgress.done()
   })
 })()
 
